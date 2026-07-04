@@ -1,0 +1,24 @@
+site_id,site_name,owner,item_count,current_label,has_anonymous_links,external_guests,last_modified,last_modified_raw,mapped_label
+S-001,Corporate Communications,comms.lead@leg.bc.ca,4820,Public,False,0,2025-11-03,2025-11-03,Public
+S-002,ITD Project Plans,carlo.munoz@leg.bc.ca,12044,Internal,False,2,2025-11-04,11/4/2025,Internal
+S-003,HR Benefits Enrolment,hr.team@leg.bc.ca,1990,Confidential / All Employees,False,1,2025-10-28,2025-10-28,Internal
+S-004,Finance Draft Budgets,finance.ops@leg.bc.ca,3310,Highly Confidential / Specific People,False,0,2025-11-01,Nov 1 2025,Restricted
+S-005,Hansard — Broadcast Ops,broadcast@leg.bc.ca,8771,Internal,True,4,2025-11-02,2025/11/02,Internal
+S-006,Legal Opinions Library,law.clerk@leg.bc.ca,640,Restricted,True,3,2025-11-05,2025-11-05,Restricted
+S-007,Member Services Portal,member.support@leg.bc.ca,15320,,False,0,2025-10-30,10/30/2025,UNLABELLED (needs review)
+S-008,Vendor Contracts (active),procurement@leg.bc.ca,2055,Confidential / Anyone (not protected),False,6,2025-11-04,2025-11-04,Internal
+S-009,IT Security Runbooks,rob.ashbourne@leg.bc.ca,1208,Confidential,False,0,2025-11-01,2025-11-01,Confidential
+S-010,Committee Closed Sessions,clerk.committees@leg.bc.ca,930,Restricted,False,1,2025-11-06,2025-11-06,Restricted
+S-011,General Staff Share,allstaff@leg.bc.ca,42110,Internal,True,11,2025-10-22,2025-10-22,Internal
+S-012,Constituency Office Files,co.admin@leg.bc.ca,7740,Confidential / Trusted People,False,2,2025-11-03,2025-11-03,Confidential
+S-014,Payroll Records,payroll@leg.bc.ca,880,Highly Confidential / All Employees,False,0,2025-10-19,2025-10-19,Confidential
+S-015,Public Job Postings,recruitment@leg.bc.ca,205,General,False,0,2025-11-02,2025-11-02,Internal
+S-016,Audit and Review Findings,internal.audit@leg.bc.ca,470,Confidential,False,0,2025-11-04,2025-11-04,Confidential
+S-017,Leadership Briefing Notes,clerk.office@leg.bc.ca,355,Internal,False,0,2025-11-05,2025-11-05,Internal
+S-018,Training Materials,training@leg.bc.ca,3900,Internal,False,1,2025-10-31,2025-10-31,Internal
+S-019,Network Diagrams and Plans,infra.team@leg.bc.ca,1140,Internal,True,0,2025-11-01,2025-11-01,Internal
+S-020,Personnel Reorg Planning,chro.office@leg.bc.ca,210,Confidential,False,0,2025-11-06,2025-11-06,Confidential
+S-021,Expense Claims Archive,finance.ops@leg.bc.ca,6620,Internal,False,0,2025-10-15,10/15/2025,Internal
+S-022,Old Records (pre-2015),records@leg.bc.ca,28900,,True,0,2014-12-30,2014-12-30,UNLABELLED (needs review)
+S-023,Media Releases Approved,comms.lead@leg.bc.ca,1410,Public,False,0,2025-11-04,2025-11-04,Public
+S-024,Incident Response Active,soc@leg.bc.ca,95,Restricted,False,0,2025-11-06,2025-11-06,Restricted

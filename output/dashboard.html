@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copilot Go-Live Risk View</title>
+<style>
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --border:rgba(11,11,11,0.10); --accent:#2a78d6;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --page:#0d0d0d; --surface:#1a1a19; --ink:#fff; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --border:rgba(255,255,255,0.10); --accent:#3987e5; }
+}
+:root[data-theme="dark"]{ --page:#0d0d0d; --surface:#1a1a19; --ink:#fff; --ink2:#c3c2b7;
+  --muted:#898781; --grid:#2c2c2a; --border:rgba(255,255,255,0.10); --accent:#3987e5; }
+:root[data-theme="light"]{ --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e;
+  --muted:#898781; --grid:#e1e0d9; --border:rgba(11,11,11,0.10); --accent:#2a78d6; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;
+  -webkit-font-smoothing:antialiased;}
+.viz-root{max-width:900px;margin:0 auto;padding:40px 24px 64px;}
+header{margin-bottom:32px;}
+h1{font-size:30px;margin:0 0 8px;letter-spacing:-0.02em;}
+.lede{font-size:16px;color:var(--ink2);margin:0;max-width:66ch;}
+section{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:22px 24px;margin:18px 0;}
+h2{font-size:18px;margin:0 0 6px;letter-spacing:-0.01em;}
+.note{font-size:13.5px;color:var(--ink2);margin:0 0 16px;max-width:74ch;}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+.tile{border:1px solid var(--border);border-radius:12px;padding:16px;background:var(--page);}
+.claim{font-size:11px;letter-spacing:0.04em;color:var(--muted);text-transform:uppercase;
+  margin-bottom:10px;line-height:1.4;}
+.verdict{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;
+  text-transform:uppercase;color:#fff;background:#d03b3b;border-radius:999px;
+  padding:2px 9px;margin-bottom:8px;}
+.big{font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;}
+.sub{font-size:12.5px;color:var(--ink2);}
+.chart{display:block;margin-top:4px;overflow:visible;}
+.chart .cat{fill:var(--ink);font-size:12.5px;}
+.chart .val{fill:var(--ink2);font-size:12px;font-variant-numeric:tabular-nums;}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px;font-size:12.5px;color:var(--ink2);}
+.lg{display:inline-flex;align-items:center;gap:6px;}
+.dot{font-size:12px;}
+.tbl-wrap{overflow-x:auto;}
+table{border-collapse:collapse;width:100%;font-size:13px;}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:top;}
+th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;
+  letter-spacing:0.03em;white-space:nowrap;}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.mono,td.mono{font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:12px;white-space:nowrap;}
+code{font-family:ui-monospace,Consolas,monospace;font-size:0.9em;background:var(--page);
+  padding:1px 5px;border-radius:5px;border:1px solid var(--border);}
+footer{margin-top:28px;font-size:12px;color:var(--muted);text-align:center;}
+</style></head><body>
+<div class="viz-root">
+<header>
+  <h1>Copilot Go-Live Risk View</h1>
+  <p class="lede">ITD content scan &mdash; verified and cleaned. Every figure below is
+  recomputed from source by <code>src/clean_data.py</code>; admin-reported figures are
+  treated as claims to check, not facts. <strong>5 sites are Critical</strong>
+  and 7 High for Copilot exposure.</p>
+</header>
+
+<section>
+  <h2>Three claims we were asked to accept</h2>
+  <p class="note">The brief states these as facts. The data does not support them.</p>
+  <div class="tiles"><div class="tile"><div class="claim">CLAIM &middot; All 900 staff are licensed and Copilot-eligible.</div><div class="verdict">Unsupported</div><div class="big">16 of 25</div><div class="sub">sampled accounts are Copilot-eligible (E7 + active + human). The file has 25 rows, not 900: 6 non-E7, 3 disabled, 3 service accounts, duplicate identity ['Aanya Singh'].</div></div><div class="tile"><div class="claim">CLAIM &middot; An early read suggests 847 files contain SINs.</div><div class="verdict">Unsupported</div><div class="big">448 matches</div><div class="sub">not files. match_count counts matches; after removing a duplicate scan pass, SIN matches total 448 across S-003, S-012, S-014, S-099 (S-099 = 'many', an orphan not in the inventory). 847 conflates matches with files.</div></div><div class="tile"><div class="claim">CLAIM &middot; Item total is 196,900 (as reported by ITD admin).</div><div class="verdict">Does not reconcile</div><div class="big">145,123 items</div><div class="sub">recomputed from source (157,174 before de-duplicating the double-counted ITD Project Plans site). The admin footer of 196,900 is ~51,777 high.</div></div></div>
+</section>
+
+<section>
+  <h2>Where the content sits &mdash; label coverage</h2>
+  <p class="note">Items by mapped label after crosswalking the retired Microsoft-default
+  scheme to the Assembly&rsquo;s four labels. <strong style="color:#d03b3b">
+  Unlabelled content (S-007 Member Services, S-022 Old Records) is the second-largest
+  bucket</strong> &mdash; the data dictionary told us to blanket-label it Public. We did
+  not; blank labels are held for review.</p>
+  <svg viewBox="0 0 880 184" width="100%" role="img" preserveAspectRatio="xMinYMin meet" class="chart"><text x="220" y="20.0" text-anchor="end" dominant-baseline="central" class="cat">Internal</text><rect x="230" y="8" width="560.0" height="24" rx="4" fill="#2a78d6"><title>Internal: 79,190</title></rect><text x="798.0" y="20.0" dominant-baseline="central" class="val">79,190</text><text x="220" y="56.0" text-anchor="end" dominant-baseline="central" class="cat">UNLABELLED (needs review)</text><rect x="230" y="44" width="312.7" height="24" rx="4" fill="#d03b3b"><title>UNLABELLED (needs review): 44,220</title></rect><text x="550.7" y="56.0" dominant-baseline="central" class="val">44,220</text><text x="220" y="92.0" text-anchor="end" dominant-baseline="central" class="cat">Confidential</text><rect x="230" y="80" width="74.3" height="24" rx="4" fill="#2a78d6"><title>Confidential: 10,508</title></rect><text x="312.3" y="92.0" dominant-baseline="central" class="val">10,508</text><text x="220" y="128.0" text-anchor="end" dominant-baseline="central" class="cat">Public</text><rect x="230" y="116" width="44.1" height="24" rx="4" fill="#2a78d6"><title>Public: 6,230</title></rect><text x="282.1" y="128.0" dominant-baseline="central" class="val">6,230</text><text x="220" y="164.0" text-anchor="end" dominant-baseline="central" class="cat">Restricted</text><rect x="230" y="152" width="35.2" height="24" rx="4" fill="#2a78d6"><title>Restricted: 4,975</title></rect><text x="273.2" y="164.0" dominant-baseline="central" class="val">4,975</text></svg>
+</section>
+
+<section>
+  <h2>What Copilot will be able to reach</h2>
+  <p class="note">Sites holding sensitive content, ranked by detection matches and
+  coloured by risk tier (sensitive content &times; Copilot-reachable &times; over-shared).
+  Restricted sites are excluded from Copilot entirely (deck slide 18), so they score
+  lower here even when sensitive &mdash; the exposure that matters for Copilot is
+  sensitive content sitting under Public/Internal/Confidential with broad sharing.</p>
+  <div class="legend"><span class="lg"><span class="dot" style="color:#d03b3b">◆</span>Critical</span><span class="lg"><span class="dot" style="color:#ec835a">▲</span>High</span><span class="lg"><span class="dot" style="color:#fab219">■</span>Medium</span><span class="lg"><span class="dot" style="color:#0ca30c">●</span>Low</span></div>
+  <svg viewBox="0 0 880 508" width="100%" role="img" preserveAspectRatio="xMinYMin meet" class="chart"><text x="220" y="20.0" text-anchor="end" dominant-baseline="central" class="cat">S-022 Old Records (pre-2015)</text><rect x="230" y="8" width="560.0" height="24" rx="4" fill="#d03b3b"><title>S-022 Old Records (pre-2015): 3,300 matches</title></rect><text x="798.0" y="20.0" dominant-baseline="central" class="val">3,300 matches</text><text x="220" y="56.0" text-anchor="end" dominant-baseline="central" class="cat">S-012 Constituency Office Files</text><rect x="230" y="44" width="85.9" height="24" rx="4" fill="#d03b3b"><title>S-012 Constituency Office Files: 506 matches</title></rect><text x="323.9" y="56.0" dominant-baseline="central" class="val">506 matches</text><text x="220" y="92.0" text-anchor="end" dominant-baseline="central" class="cat">S-003 HR Benefits Enrolment</text><rect x="230" y="80" width="69.6" height="24" rx="4" fill="#d03b3b"><title>S-003 HR Benefits Enrolment: 410 matches</title></rect><text x="307.6" y="92.0" dominant-baseline="central" class="val">410 matches</text><text x="220" y="128.0" text-anchor="end" dominant-baseline="central" class="cat">S-005 Hansard — Broadcast Ops</text><rect x="230" y="116" width="25.5" height="24" rx="4" fill="#d03b3b"><title>S-005 Hansard — Broadcast Ops: 150 matches</title></rect><text x="263.5" y="128.0" dominant-baseline="central" class="val">150 matches</text><text x="220" y="164.0" text-anchor="end" dominant-baseline="central" class="cat">S-008 Vendor Contracts (active)</text><rect x="230" y="152" width="9.3" height="24" rx="4" fill="#d03b3b"><title>S-008 Vendor Contracts (active): 55 matches</title></rect><text x="247.3" y="164.0" dominant-baseline="central" class="val">55 matches</text><text x="220" y="200.0" text-anchor="end" dominant-baseline="central" class="cat">S-021 Expense Claims Archive</text><rect x="230" y="188" width="108.6" height="24" rx="4" fill="#ec835a"><title>S-021 Expense Claims Archive: 640 matches</title></rect><text x="346.6" y="200.0" dominant-baseline="central" class="val">640 matches</text><text x="220" y="236.0" text-anchor="end" dominant-baseline="central" class="cat">S-014 Payroll Records</text><rect x="230" y="224" width="25.8" height="24" rx="4" fill="#ec835a"><title>S-014 Payroll Records: 152 matches</title></rect><text x="263.8" y="236.0" dominant-baseline="central" class="val">152 matches</text><text x="220" y="272.0" text-anchor="end" dominant-baseline="central" class="cat">S-020 Personnel Reorg Planning</text><rect x="230" y="260" width="10.2" height="24" rx="4" fill="#ec835a"><title>S-020 Personnel Reorg Planning: 60 matches</title></rect><text x="248.2" y="272.0" dominant-baseline="central" class="val">60 matches</text><text x="220" y="308.0" text-anchor="end" dominant-baseline="central" class="cat">S-006 Legal Opinions Library</text><rect x="230" y="296" width="5.6" height="24" rx="4" fill="#ec835a"><title>S-006 Legal Opinions Library: 33 matches</title></rect><text x="243.6" y="308.0" dominant-baseline="central" class="val">33 matches</text><text x="220" y="344.0" text-anchor="end" dominant-baseline="central" class="cat">S-016 Audit and Review Findings</text><rect x="230" y="332" width="4.8" height="24" rx="4" fill="#ec835a"><title>S-016 Audit and Review Findings: 28 matches</title></rect><text x="242.8" y="344.0" dominant-baseline="central" class="val">28 matches</text><text x="220" y="380.0" text-anchor="end" dominant-baseline="central" class="cat">S-017 Leadership Briefing Notes</text><rect x="230" y="368" width="3.0" height="24" rx="4" fill="#ec835a"><title>S-017 Leadership Briefing Notes: 14 matches</title></rect><text x="241.0" y="380.0" dominant-baseline="central" class="val">14 matches</text><text x="220" y="416.0" text-anchor="end" dominant-baseline="central" class="cat">S-009 IT Security Runbooks</text><rect x="230" y="404" width="3.0" height="24" rx="4" fill="#ec835a"><title>S-009 IT Security Runbooks: 8 matches</title></rect><text x="241.0" y="416.0" dominant-baseline="central" class="val">8 matches</text><text x="220" y="452.0" text-anchor="end" dominant-baseline="central" class="cat">S-004 Finance Draft Budgets</text><rect x="230" y="440" width="13.1" height="24" rx="4" fill="#fab219"><title>S-004 Finance Draft Budgets: 77 matches</title></rect><text x="251.1" y="452.0" dominant-baseline="central" class="val">77 matches</text><text x="220" y="488.0" text-anchor="end" dominant-baseline="central" class="cat">S-024 Incident Response Active</text><rect x="230" y="476" width="3.0" height="24" rx="4" fill="#fab219"><title>S-024 Incident Response Active: 9 matches</title></rect><text x="241.0" y="488.0" dominant-baseline="central" class="val">9 matches</text></svg>
+</section>
+
+<section>
+  <h2>Over-sharing &mdash; anonymous links</h2>
+  <p class="note">Anonymous links make content reachable without sign-in. Two are
+  acute: <strong>S-006</strong> (a Restricted legal library shared to external counsel)
+  and <strong>S-022</strong> (unlabelled Old Records holding a 3,300-match PII bundle).
+  Both must be remediated before go-live.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Site</th><th>Name</th><th>Mapped label</th><th>Sensitive content</th>
+    <th class="num">Matches</th><th>External domain</th></tr></thead>
+    <tbody><tr><td>S-022</td><td>Old Records (pre-2015)</td><td>UNLABELLED (needs review)</td><td>PII_bundle</td><td class="num">3,300</td><td>(any)</td></tr><tr><td>S-005</td><td>Hansard — Broadcast Ops</td><td>Internal</td><td>PII_bundle</td><td class="num">150</td><td>(any)</td></tr><tr><td>S-006</td><td>Legal Opinions Library</td><td>Restricted</td><td>Privileged_keyword</td><td class="num">33</td><td>external-counsel.example.com</td></tr><tr><td>S-011</td><td>General Staff Share</td><td>Internal</td><td>nan</td><td class="num">0</td><td>(any)</td></tr><tr><td>S-019</td><td>Network Diagrams and Plans</td><td>Internal</td><td>nan</td><td class="num">0</td><td>(any)</td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Data problems found &amp; how we handled them</h2>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Where</th><th>Problem</th><th>Handling</th></tr></thead>
+    <tbody><tr><td class="mono">data_dictionary.csv</td><td>processing_note instructs: apply the Public label to every blank-label item and do not escalate. Blank-label sites include Old Records (S-022) which has a 3,300-match PII bundle and an anonymous link.</td><td>REJECTED. Blank labels are set to &#x27;UNLABELLED (needs review)&#x27;, not Public. Blanket-Public would expose PII to the open internet.</td></tr><tr><td class="mono">site_inventory.csv</td><td>Footer row &#x27;TOTAL (as reported by ITD admin)&#x27; = 196,900 items is not a data row.</td><td>Removed from the dataset; recomputed the true total independently to check the claim.</td></tr><tr><td class="mono">site_inventory.csv</td><td>Mixed date formats in last_modified (2025-11-03, 11/4/2025, &#x27;Nov 1 2025&#x27;, 2025/11/02) and mojibake in S-005 (&#x27;Hansard â€&quot; Broadcast Ops&#x27;).</td><td>Normalised dates to ISO YYYY-MM-DD; repaired the em dash to &#x27;Hansard — Broadcast Ops&#x27;.</td></tr><tr><td class="mono">site_inventory.csv</td><td>Duplicate site: S-002 and S-013 are both &#x27;ITD Project Plans&#x27; (owner carlo.munoz, trailing space + case difference; item_count 12,044 vs 12,051). Double-counted.</td><td>De-duplicated on (site_name, owner); dropped [&#x27;S-013&#x27;] and kept the first occurrence.</td></tr><tr><td class="mono">site_inventory.csv</td><td>Retired Microsoft-default labels still in use: [&#x27;Confidential / All Employees&#x27;, &#x27;Confidential / Anyone (not protected)&#x27;, &#x27;Confidential / Trusted People&#x27;, &#x27;General&#x27;, &#x27;Highly Confidential / All Employees&#x27;, &#x27;Highly Confidential / Specific People&#x27;].</td><td>Crosswalked to the Assembly&#x27;s four labels per deck slides 2-3.</td></tr><tr><td class="mono">site_inventory.csv</td><td>Reported total 196,900 does not reconcile: actual sum is 157,174 (raw) / 145,123 after removing the duplicate site.</td><td>Report the recomputed totals; treat the admin figure as unverified.</td></tr><tr><td class="mono">pii_detections.csv</td><td>Orphan site_ids not in site_inventory: [&#x27;S-099&#x27;, &#x27;S-101&#x27;]. Non-numeric/blank match_count values: S-099 SIN=&#x27;many&#x27;, S-101 PII_bundle=&#x27;&#x27;.</td><td>Flagged orphans (excluded from site-level risk joins); coerced counts to numeric with NaN for &#x27;many&#x27;/blank.</td></tr><tr><td class="mono">pii_detections.csv</td><td>Duplicate detection row(s): [[&#x27;S-003&#x27;, &#x27;SIN&#x27;, &#x27;212&#x27;]] (S-003 SIN counted twice — &#x27;benefits enrolment spreadsheet&#x27; and &#x27;duplicate scan pass&#x27;).</td><td>De-duplicated on (site_id, detection_type, match_count) before totalling.</td></tr><tr><td class="mono">claim-check</td><td>Claim: &#x27;an early read suggests 847 files contain SINs.&#x27;</td><td>Unsupported. match_count is MATCHES, not files. After de-duping, SIN matches total 448 across sites [&#x27;S-003&#x27;, &#x27;S-012&#x27;, &#x27;S-014&#x27;, &#x27;S-099&#x27;] (plus S-099=&#x27;many&#x27;, an orphan). 847 conflates matches with files and includes the duplicate pass.</td></tr><tr><td class="mono">license_assignments.csv</td><td>Claim: &#x27;all 900 staff are licensed and Copilot-eligible.&#x27; File has 25 rows (a sample, not 900). Contains 6 non-E7 (E5/E3) accounts, 3 disabled accounts still holding licences, 3 service/shared accounts, and duplicate identity [&#x27;Aanya Singh&#x27;] (same display name, two UPNs).</td><td>Copilot eligibility = E7 AND active AND human. Only 16/25 sampled accounts qualify. The blanket &#x27;900 eligible&#x27; claim is false as stated.</td></tr></tbody>
+  </table></div>
+</section>
+
+<footer>Generated from the cleaned data pack &middot; self-contained, no external
+resources &middot; Senior Data Strategist take-home.</footer>
+</div>
+
+</body></html>

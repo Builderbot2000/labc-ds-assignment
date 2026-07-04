@@ -1,0 +1,26 @@
+user_upn,display_name,department,license_sku,account_status,last_signin
+a.singh@leg.bc.ca,Aanya Singh,Hansard,E7,active,2025-11-05
+b.tomlin@leg.bc.ca,Ben Tomlin,hansard svcs,E7,active,2025-11-04
+c.reyes@leg.bc.ca,Carmen Reyes,HBS,E5,active,2025-10-30
+d.okafor@leg.bc.ca,Daniel Okafor,Hansard Broadcast,E7,active,2025-11-01
+e.lund@leg.bc.ca,Erika Lund,ITD,E7,active,2025-11-05
+f.cho@leg.bc.ca,Frank Cho,IT Dept,E7,active,2025-11-03
+svc-backup@leg.bc.ca,Backup Service,,E3,active,2024-02-11
+svc-scan@leg.bc.ca,Scan Service,,E3,active,2023-09-01
+g.murphy@leg.bc.ca,Gwen Murphy,Finance,E7,active,2025-11-04
+h.patel@leg.bc.ca,Hari Patel,Finance & Ops,E7,disabled,2025-06-20
+i.novak@leg.bc.ca,Iva Novak,Member Support,E7,active,2025-11-02
+j.bauer@leg.bc.ca,Jon Bauer,Member Services,E5,active,2025-10-29
+k.singh@leg.bc.ca,Aanya Singh,Hansard,E7,active,2025-11-05
+l.frost@leg.bc.ca,Lena Frost,Legal,E7,active,2025-11-06
+m.adeyemi@leg.bc.ca,Mo Adeyemi,Security,E7,active,2025-11-05
+n.dubois@leg.bc.ca,Nadia Dubois,Comms,E7,disabled,2025-03-15
+o.reilly@leg.bc.ca,Owen Reilly,Procurement,E7,active,2025-11-01
+p.evans@leg.bc.ca,Pat Evans,HR,E7,active,2025-11-04
+q.zhao@leg.bc.ca,Qing Zhao,ITD,E7,active,2025-09-12
+r.gill@leg.bc.ca,Raj Gill,Infrastructure,E5,active,2025-11-03
+shared-mbox-co@leg.bc.ca,Constituency Shared Mailbox,,E3,active,never
+t.olsen@leg.bc.ca,Tara Olsen,Training,E7,active,2025-10-28
+u.kaur@leg.bc.ca,Uma Kaur,Member Support,E7,active,2025-11-05
+v.brooks@leg.bc.ca,Vic Brooks,Records,E7,disabled,2025-01-09
+w.lim@leg.bc.ca,Will Lim,ITD,E7,active,2025-11-06

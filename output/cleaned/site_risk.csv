@@ -1,0 +1,24 @@
+site_id,site_name,owner,item_count,current_label,mapped_label,has_anonymous_links,external_guests,detection_types,total_matches,has_sensitive,copilot_reachable,over_shared,risk_level
+S-022,Old Records (pre-2015),records@leg.bc.ca,28900,,UNLABELLED (needs review),True,0,PII_bundle,3300,True,True,True,Critical
+S-012,Constituency Office Files,co.admin@leg.bc.ca,7740,Confidential / Trusted People,Confidential,False,2,"PII_bundle, SIN",506,True,True,True,Critical
+S-003,HR Benefits Enrolment,hr.team@leg.bc.ca,1990,Confidential / All Employees,Internal,False,1,"PII_bundle, SIN",410,True,True,True,Critical
+S-005,Hansard — Broadcast Ops,broadcast@leg.bc.ca,8771,Internal,Internal,True,4,PII_bundle,150,True,True,True,Critical
+S-008,Vendor Contracts (active),procurement@leg.bc.ca,2055,Confidential / Anyone (not protected),Internal,False,6,BudgetPattern,55,True,True,True,Critical
+S-021,Expense Claims Archive,finance.ops@leg.bc.ca,6620,Internal,Internal,False,0,BudgetPattern,640,True,True,False,High
+S-014,Payroll Records,payroll@leg.bc.ca,880,Highly Confidential / All Employees,Confidential,False,0,"CreditCard, SIN",152,True,True,False,High
+S-020,Personnel Reorg Planning,chro.office@leg.bc.ca,210,Confidential,Confidential,False,0,PII_bundle,60,True,True,False,High
+S-006,Legal Opinions Library,law.clerk@leg.bc.ca,640,Restricted,Restricted,True,3,Privileged_keyword,33,True,False,True,High
+S-016,Audit and Review Findings,internal.audit@leg.bc.ca,470,Confidential,Confidential,False,0,Audit_finding,28,True,True,False,High
+S-017,Leadership Briefing Notes,clerk.office@leg.bc.ca,355,Internal,Internal,False,0,Privileged_keyword,14,True,True,False,High
+S-009,IT Security Runbooks,rob.ashbourne@leg.bc.ca,1208,Confidential,Confidential,False,0,APIKey_Secret,8,True,True,False,High
+S-004,Finance Draft Budgets,finance.ops@leg.bc.ca,3310,Highly Confidential / Specific People,Restricted,False,0,BudgetPattern,77,True,False,False,Medium
+S-024,Incident Response Active,soc@leg.bc.ca,95,Restricted,Restricted,False,0,Security_sensitive,9,True,False,False,Medium
+S-002,ITD Project Plans,carlo.munoz@leg.bc.ca,12044,Internal,Internal,False,2,,0,False,True,True,Medium
+S-010,Committee Closed Sessions,clerk.committees@leg.bc.ca,930,Restricted,Restricted,False,1,,0,False,False,True,Medium
+S-011,General Staff Share,allstaff@leg.bc.ca,42110,Internal,Internal,True,11,,0,False,True,True,Medium
+S-018,Training Materials,training@leg.bc.ca,3900,Internal,Internal,False,1,,0,False,True,True,Medium
+S-019,Network Diagrams and Plans,infra.team@leg.bc.ca,1140,Internal,Internal,True,0,,0,False,True,True,Medium
+S-001,Corporate Communications,comms.lead@leg.bc.ca,4820,Public,Public,False,0,,0,False,True,False,Low
+S-007,Member Services Portal,member.support@leg.bc.ca,15320,,UNLABELLED (needs review),False,0,,0,False,True,False,Low
+S-015,Public Job Postings,recruitment@leg.bc.ca,205,General,Internal,False,0,,0,False,True,False,Low
+S-023,Media Releases Approved,comms.lead@leg.bc.ca,1410,Public,Public,False,0,,0,False,True,False,Low

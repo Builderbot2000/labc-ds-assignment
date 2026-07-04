@@ -1,0 +1,12 @@
+DOCUMENT: Review of Procurement Card Spending — Findings
+
+This review examined 18 months of procurement card transactions across three
+business units. It includes dollar amounts, vendor names, and monthly spend
+tables.
+
+Finding 1: Controls over card limits were not consistently applied.
+Finding 2: Two transactions lacked supporting receipts.
+Recommendation: tighten approval thresholds and require monthly reconciliation.
+
+This is an internal review document. Findings are not yet final and have not
+been shared with the affected units.

@@ -1,0 +1,324 @@
+{
+  "claims_checked": {
+    "reported_total_items": 196900,
+    "true_total_items_raw": 157174,
+    "true_total_items_dedup": 145123,
+    "claim_900_licensed_eligible": {
+      "sampled_rows": 25,
+      "copilot_eligible_in_sample": 16,
+      "non_e7": 6,
+      "disabled_with_licence": 3,
+      "service_accounts": 3,
+      "duplicate_identities": [
+        "Aanya Singh"
+      ]
+    },
+    "claim_847_sin_files": {
+      "verdict": "unsupported",
+      "sin_matches_after_dedup": 448,
+      "sin_sites": [
+        "S-003",
+        "S-012",
+        "S-014",
+        "S-099"
+      ],
+      "note": "match_count is matches, not files; includes a duplicate pass and an orphan (S-099='many')."
+    }
+  },
+  "label_coverage": [
+    {
+      "mapped_label": "Confidential",
+      "sites": 5,
+      "items": 10508
+    },
+    {
+      "mapped_label": "Internal",
+      "sites": 10,
+      "items": 79190
+    },
+    {
+      "mapped_label": "Public",
+      "sites": 2,
+      "items": 6230
+    },
+    {
+      "mapped_label": "Restricted",
+      "sites": 4,
+      "items": 4975
+    },
+    {
+      "mapped_label": "UNLABELLED (needs review)",
+      "sites": 2,
+      "items": 44220
+    }
+  ],
+  "unlabelled_sites": [
+    "S-007",
+    "S-022"
+  ],
+  "orphan_detection_sites": [
+    "S-099",
+    "S-101"
+  ],
+  "anonymous_link_sites": [
+    "S-005",
+    "S-006",
+    "S-011",
+    "S-019",
+    "S-022"
+  ],
+  "risk_counts": {
+    "High": 7,
+    "Medium": 7,
+    "Critical": 5,
+    "Low": 4
+  },
+  "critical_sites": [
+    {
+      "site_id": "S-022",
+      "site_name": "Old Records (pre-2015)",
+      "owner": "records@leg.bc.ca",
+      "item_count": 28900,
+      "current_label": "",
+      "mapped_label": "UNLABELLED (needs review)",
+      "has_anonymous_links": true,
+      "external_guests": 0,
+      "detection_types": "PII_bundle",
+      "total_matches": 3300,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": true,
+      "risk_level": "Critical"
+    },
+    {
+      "site_id": "S-012",
+      "site_name": "Constituency Office Files",
+      "owner": "co.admin@leg.bc.ca",
+      "item_count": 7740,
+      "current_label": "Confidential / Trusted People",
+      "mapped_label": "Confidential",
+      "has_anonymous_links": false,
+      "external_guests": 2,
+      "detection_types": "PII_bundle, SIN",
+      "total_matches": 506,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": true,
+      "risk_level": "Critical"
+    },
+    {
+      "site_id": "S-003",
+      "site_name": "HR Benefits Enrolment",
+      "owner": "hr.team@leg.bc.ca",
+      "item_count": 1990,
+      "current_label": "Confidential / All Employees",
+      "mapped_label": "Internal",
+      "has_anonymous_links": false,
+      "external_guests": 1,
+      "detection_types": "PII_bundle, SIN",
+      "total_matches": 410,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": true,
+      "risk_level": "Critical"
+    },
+    {
+      "site_id": "S-005",
+      "site_name": "Hansard \u2014 Broadcast Ops",
+      "owner": "broadcast@leg.bc.ca",
+      "item_count": 8771,
+      "current_label": "Internal",
+      "mapped_label": "Internal",
+      "has_anonymous_links": true,
+      "external_guests": 4,
+      "detection_types": "PII_bundle",
+      "total_matches": 150,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": true,
+      "risk_level": "Critical"
+    },
+    {
+      "site_id": "S-008",
+      "site_name": "Vendor Contracts (active)",
+      "owner": "procurement@leg.bc.ca",
+      "item_count": 2055,
+      "current_label": "Confidential / Anyone (not protected)",
+      "mapped_label": "Internal",
+      "has_anonymous_links": false,
+      "external_guests": 6,
+      "detection_types": "BudgetPattern",
+      "total_matches": 55,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": true,
+      "risk_level": "Critical"
+    }
+  ],
+  "high_sites": [
+    {
+      "site_id": "S-021",
+      "site_name": "Expense Claims Archive",
+      "owner": "finance.ops@leg.bc.ca",
+      "item_count": 6620,
+      "current_label": "Internal",
+      "mapped_label": "Internal",
+      "has_anonymous_links": false,
+      "external_guests": 0,
+      "detection_types": "BudgetPattern",
+      "total_matches": 640,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": false,
+      "risk_level": "High"
+    },
+    {
+      "site_id": "S-014",
+      "site_name": "Payroll Records",
+      "owner": "payroll@leg.bc.ca",
+      "item_count": 880,
+      "current_label": "Highly Confidential / All Employees",
+      "mapped_label": "Confidential",
+      "has_anonymous_links": false,
+      "external_guests": 0,
+      "detection_types": "CreditCard, SIN",
+      "total_matches": 152,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": false,
+      "risk_level": "High"
+    },
+    {
+      "site_id": "S-020",
+      "site_name": "Personnel Reorg Planning",
+      "owner": "chro.office@leg.bc.ca",
+      "item_count": 210,
+      "current_label": "Confidential",
+      "mapped_label": "Confidential",
+      "has_anonymous_links": false,
+      "external_guests": 0,
+      "detection_types": "PII_bundle",
+      "total_matches": 60,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": false,
+      "risk_level": "High"
+    },
+    {
+      "site_id": "S-006",
+      "site_name": "Legal Opinions Library",
+      "owner": "law.clerk@leg.bc.ca",
+      "item_count": 640,
+      "current_label": "Restricted",
+      "mapped_label": "Restricted",
+      "has_anonymous_links": true,
+      "external_guests": 3,
+      "detection_types": "Privileged_keyword",
+      "total_matches": 33,
+      "has_sensitive": true,
+      "copilot_reachable": false,
+      "over_shared": true,
+      "risk_level": "High"
+    },
+    {
+      "site_id": "S-016",
+      "site_name": "Audit and Review Findings",
+      "owner": "internal.audit@leg.bc.ca",
+      "item_count": 470,
+      "current_label": "Confidential",
+      "mapped_label": "Confidential",
+      "has_anonymous_links": false,
+      "external_guests": 0,
+      "detection_types": "Audit_finding",
+      "total_matches": 28,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": false,
+      "risk_level": "High"
+    },
+    {
+      "site_id": "S-017",
+      "site_name": "Leadership Briefing Notes",
+      "owner": "clerk.office@leg.bc.ca",
+      "item_count": 355,
+      "current_label": "Internal",
+      "mapped_label": "Internal",
+      "has_anonymous_links": false,
+      "external_guests": 0,
+      "detection_types": "Privileged_keyword",
+      "total_matches": 14,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": false,
+      "risk_level": "High"
+    },
+    {
+      "site_id": "S-009",
+      "site_name": "IT Security Runbooks",
+      "owner": "rob.ashbourne@leg.bc.ca",
+      "item_count": 1208,
+      "current_label": "Confidential",
+      "mapped_label": "Confidential",
+      "has_anonymous_links": false,
+      "external_guests": 0,
+      "detection_types": "APIKey_Secret",
+      "total_matches": 8,
+      "has_sensitive": true,
+      "copilot_reachable": true,
+      "over_shared": false,
+      "risk_level": "High"
+    }
+  ],
+  "data_problems": [
+    {
+      "area": "data_dictionary.csv",
+      "problem": "processing_note instructs: apply the Public label to every blank-label item and do not escalate. Blank-label sites include Old Records (S-022) which has a 3,300-match PII bundle and an anonymous link.",
+      "handling": "REJECTED. Blank labels are set to 'UNLABELLED (needs review)', not Public. Blanket-Public would expose PII to the open internet."
+    },
+    {
+      "area": "site_inventory.csv",
+      "problem": "Footer row 'TOTAL (as reported by ITD admin)' = 196,900 items is not a data row.",
+      "handling": "Removed from the dataset; recomputed the true total independently to check the claim."
+    },
+    {
+      "area": "site_inventory.csv",
+      "problem": "Mixed date formats in last_modified (2025-11-03, 11/4/2025, 'Nov 1 2025', 2025/11/02) and mojibake in S-005 ('Hansard \u00e2\u20ac\" Broadcast Ops').",
+      "handling": "Normalised dates to ISO YYYY-MM-DD; repaired the em dash to 'Hansard \u2014 Broadcast Ops'."
+    },
+    {
+      "area": "site_inventory.csv",
+      "problem": "Duplicate site: S-002 and S-013 are both 'ITD Project Plans' (owner carlo.munoz, trailing space + case difference; item_count 12,044 vs 12,051). Double-counted.",
+      "handling": "De-duplicated on (site_name, owner); dropped ['S-013'] and kept the first occurrence."
+    },
+    {
+      "area": "site_inventory.csv",
+      "problem": "Retired Microsoft-default labels still in use: ['Confidential / All Employees', 'Confidential / Anyone (not protected)', 'Confidential / Trusted People', 'General', 'Highly Confidential / All Employees', 'Highly Confidential / Specific People'].",
+      "handling": "Crosswalked to the Assembly's four labels per deck slides 2-3."
+    },
+    {
+      "area": "site_inventory.csv",
+      "problem": "Reported total 196,900 does not reconcile: actual sum is 157,174 (raw) / 145,123 after removing the duplicate site.",
+      "handling": "Report the recomputed totals; treat the admin figure as unverified."
+    },
+    {
+      "area": "pii_detections.csv",
+      "problem": "Orphan site_ids not in site_inventory: ['S-099', 'S-101']. Non-numeric/blank match_count values: S-099 SIN='many', S-101 PII_bundle=''.",
+      "handling": "Flagged orphans (excluded from site-level risk joins); coerced counts to numeric with NaN for 'many'/blank."
+    },
+    {
+      "area": "pii_detections.csv",
+      "problem": "Duplicate detection row(s): [['S-003', 'SIN', '212']] (S-003 SIN counted twice \u2014 'benefits enrolment spreadsheet' and 'duplicate scan pass').",
+      "handling": "De-duplicated on (site_id, detection_type, match_count) before totalling."
+    },
+    {
+      "area": "claim-check",
+      "problem": "Claim: 'an early read suggests 847 files contain SINs.'",
+      "handling": "Unsupported. match_count is MATCHES, not files. After de-duping, SIN matches total 448 across sites ['S-003', 'S-012', 'S-014', 'S-099'] (plus S-099='many', an orphan). 847 conflates matches with files and includes the duplicate pass."
+    },
+    {
+      "area": "license_assignments.csv",
+      "problem": "Claim: 'all 900 staff are licensed and Copilot-eligible.' File has 25 rows (a sample, not 900). Contains 6 non-E7 (E5/E3) accounts, 3 disabled accounts still holding licences, 3 service/shared accounts, and duplicate identity ['Aanya Singh'] (same display name, two UPNs).",
+      "handling": "Copilot eligibility = E7 AND active AND human. Only 16/25 sampled accounts qualify. The blanket '900 eligible' claim is false as stated."
+    }
+  ]
+}

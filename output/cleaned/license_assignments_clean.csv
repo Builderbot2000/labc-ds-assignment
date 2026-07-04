@@ -1,0 +1,26 @@
+user_upn,display_name,department,license_sku,account_status,last_signin,department_raw,is_service_account,copilot_eligible
+a.singh@leg.bc.ca,Aanya Singh,Hansard,E7,active,2025-11-05,Hansard,False,True
+b.tomlin@leg.bc.ca,Ben Tomlin,Hansard,E7,active,2025-11-04,hansard svcs,False,True
+c.reyes@leg.bc.ca,Carmen Reyes,HR/Benefits,E5,active,2025-10-30,HBS,False,False
+d.okafor@leg.bc.ca,Daniel Okafor,Hansard,E7,active,2025-11-01,Hansard Broadcast,False,True
+e.lund@leg.bc.ca,Erika Lund,ITD,E7,active,2025-11-05,ITD,False,True
+f.cho@leg.bc.ca,Frank Cho,ITD,E7,active,2025-11-03,IT Dept,False,True
+svc-backup@leg.bc.ca,Backup Service,,E3,active,2024-02-11,,True,False
+svc-scan@leg.bc.ca,Scan Service,,E3,active,2023-09-01,,True,False
+g.murphy@leg.bc.ca,Gwen Murphy,Finance,E7,active,2025-11-04,Finance,False,True
+h.patel@leg.bc.ca,Hari Patel,Finance,E7,disabled,2025-06-20,Finance & Ops,False,False
+i.novak@leg.bc.ca,Iva Novak,Member Support,E7,active,2025-11-02,Member Support,False,True
+j.bauer@leg.bc.ca,Jon Bauer,Member Support,E5,active,2025-10-29,Member Services,False,False
+k.singh@leg.bc.ca,Aanya Singh,Hansard,E7,active,2025-11-05,Hansard,False,True
+l.frost@leg.bc.ca,Lena Frost,Legal,E7,active,2025-11-06,Legal,False,True
+m.adeyemi@leg.bc.ca,Mo Adeyemi,Security,E7,active,2025-11-05,Security,False,True
+n.dubois@leg.bc.ca,Nadia Dubois,Comms,E7,disabled,2025-03-15,Comms,False,False
+o.reilly@leg.bc.ca,Owen Reilly,Procurement,E7,active,2025-11-01,Procurement,False,True
+p.evans@leg.bc.ca,Pat Evans,HR/Benefits,E7,active,2025-11-04,HR,False,True
+q.zhao@leg.bc.ca,Qing Zhao,ITD,E7,active,2025-09-12,ITD,False,True
+r.gill@leg.bc.ca,Raj Gill,Infrastructure,E5,active,2025-11-03,Infrastructure,False,False
+shared-mbox-co@leg.bc.ca,Constituency Shared Mailbox,,E3,active,never,,True,False
+t.olsen@leg.bc.ca,Tara Olsen,Training,E7,active,2025-10-28,Training,False,True
+u.kaur@leg.bc.ca,Uma Kaur,Member Support,E7,active,2025-11-05,Member Support,False,True
+v.brooks@leg.bc.ca,Vic Brooks,Records,E7,disabled,2025-01-09,Records,False,False
+w.lim@leg.bc.ca,Will Lim,ITD,E7,active,2025-11-06,ITD,False,True

@@ -1,0 +1,11 @@
+site_id,link_type,created_by,target_external_domain
+S-005,anonymous,broadcast@leg.bc.ca,(any)
+S-006,anonymous,law.clerk@leg.bc.ca,external-counsel.example.com
+S-011,anonymous,allstaff@leg.bc.ca,(any)
+S-011,company,allstaff@leg.bc.ca,
+S-019,anonymous,infra.team@leg.bc.ca,(any)
+S-008,specific,procurement@leg.bc.ca,vendor-bid.example.net
+S-022,anonymous,records@leg.bc.ca,(any)
+S-002,specific,carlo.munoz@leg.bc.ca,partner-pm.example.org
+S-012,specific,co.admin@leg.bc.ca,
+S-006,specific,law.clerk@leg.bc.ca,external-counsel.example.com
