@@ -121,9 +121,6 @@ def fix_mojibake(text: str) -> str:
     text = text.replace(MOJIBAKE_MARK + '"', "—")  # em dash
     text = text.replace(MOJIBAKE_MARK, "—")          # safety net
     return text
-    for bad, good in MOJIBAKE.items():
-        text = text.replace(bad, good)
-    return text
 
 
 # ---------------------------------------------------------------------------
