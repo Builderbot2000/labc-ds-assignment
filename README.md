@@ -80,14 +80,12 @@ sites are Critical, seven High. Details in the dashboard and the proposal.
 
 ## What I'd do with more time
 
-- **Person-level attribution done properly.** The scan is site-level (owners are shared mailboxes),
-  so no defensible "top-10 people" list exists. With Purview audit / activity-explorer logs I'd
-  attribute *actions* to accounts — and only for a defined purpose, not pre-emptive profiling.
-- **Reconcile the full 900-user licence roster** from Entra ID, not a 25-row sample, and produce the
-  true Copilot-eligible count and the service-account inventory.
-- **Simulate the auto-labelling policy** in a Purview test tenant against a sample of each site to
-  confirm the suggested labels/descriptors before rollout, and export the DLP/label policy as code.
-- **Records-retention review of the pre-2015 archive** (S-022) — likely disposition, not relabelling.
-- **A proper FOIPPA referral pack** for the privacy office covering the anonymous-link exposures.
-- Add automated tests over `clean_data.py` (row counts, reconciliation totals, orphan detection) so
-  the pipeline fails loudly if a future scan regresses.
+- **Extend the label mapping to all 24 sites.** The proposal works through the Critical/High sites in
+  detail; with more time I'd write the same recommended-label rationale for every remaining site so the
+  configuration is complete, not just the high-risk subset.
+- **Draft the FOIPPA referral pack** for the privacy office covering the anonymous-link exposures
+  already visible in `sharing_links.csv` (S-005, S-006, S-011, S-019, S-022).
+- **Sensitivity-check the risk scoring.** Document and test the Critical/High thresholds against
+  alternatives so the ranking is defensible rather than a single fixed cut-off.
+- **Add automated tests over `clean_data.py`** (row counts, reconciliation totals, orphan detection)
+  so the pipeline fails loudly if a future scan regresses.
